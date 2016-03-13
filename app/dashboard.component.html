@@ -1,0 +1,21 @@
+<ul class="pagination">
+Group : 
+
+    <li class="active" (click) = "getGroup('A')">A</li>
+    <li class="active" (click) = "getGroup('B')">B</li>
+    <li class="active" (click) = "getGroup('C')">C</li>
+    <li class="active" (click) = "getGroup('D')">D</li>
+    <li class="active" (click) = "getGroup('E')">E</li>
+    <li class="active" (click) = "getGroup('F')">F</li>
+</ul>
+
+
+<div class="grid grid-pad">
+
+	<div *ngFor="#team of teams" (click) = "gotoDetail(team)" class="col-1-6" >
+	<img src="app/img/{{team.id}}.png" alt="" class="circle">
+		<div class="waves-effect waves-light green btn-large" >
+			{{team.name }}
+		</div>
+	</div>
+</div>
