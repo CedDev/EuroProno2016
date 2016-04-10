@@ -30,7 +30,9 @@ System.register(['angular2/core', 'angular2/router', './team.service'], function
                 CalendarComponent.prototype.getCalendar = function () {
                     var _this = this;
                     this._calService.getCalendar().then(function (calendars) { return _this.calendars = calendars; });
-                    console.log(this.calendars);
+                };
+                CalendarComponent.prototype.getCode = function (team) {
+                    this._calService.getCode(team).then(function (calendars) { return team; });
                 };
                 CalendarComponent.prototype.ngOnInit = function () {
                     this.getCalendar();

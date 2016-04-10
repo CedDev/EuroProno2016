@@ -20,6 +20,7 @@ export class TeamService {
 			teams => teams.filter(team => team.id === id)[0]
 		);
 	}
+
 }
 
 export class CalendarService {
@@ -39,4 +40,11 @@ export class CalendarService {
 			calendar => calendar.filter(cal => cal.id === id)[0]
 		);
 	}
+
+	getCode(code: string) {
+		return Promise.resolve(TEAMS).then(
+			teams => teams.filter(team => team.code === code)[0]
+		);
+	}
+
 }

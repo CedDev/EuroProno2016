@@ -62,6 +62,9 @@ System.register(['./mock-teams', './mock-calendar', 'angular2/core'], function(e
                 CalendarService.prototype.getCal = function (id) {
                     return Promise.resolve(mock_calendar_1.CALENDARS).then(function (calendar) { return calendar.filter(function (cal) { return cal.id === id; })[0]; });
                 };
+                CalendarService.prototype.getCode = function (code) {
+                    return Promise.resolve(mock_teams_1.TEAMS).then(function (teams) { return teams.filter(function (team) { return team.code === code; })[0]; });
+                };
                 return CalendarService;
             })();
             exports_1("CalendarService", CalendarService);

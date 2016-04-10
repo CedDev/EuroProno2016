@@ -1,12 +1,25 @@
 <h3>Calendar</h3>
 <div class="container">
-	<div class="row">
-		<div class="col s3 l3">
-			<ul class="calendar collection">
-			  	<li *ngFor="#cal of calendars" class="collection-item avatar">
-			    	<p class="waves-effect waves-light"> {{cal.name}}</p>
-				</li>
-			</ul>
-		</div>
-	</div>
+
+ <table class="stripped responsive-table">
+        <thead>
+          <tr>
+              <th data-field="match">Day</th>
+              <th data-field="match">Match</th>
+              <th data-field="date">Date</th>
+              <th data-field="stade">Stade</th>
+          </tr>
+        </thead>
+
+        <tbody> 
+          <tr *ngFor="#cal of calendars" class="collection-item avatar">
+            <td>{{cal.typematch}}</td>
+            <td>{{cal.team1}} - {{cal.team2}}</td>
+            <td>{{cal.date}}</td>
+            <td>{{cal.stade}}</td>
+          </tr>
+         
+        </tbody>
+      </table>
+
 </div>

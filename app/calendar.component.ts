@@ -16,15 +16,23 @@ export class CalendarComponent implements OnInit {
 
 	constructor(
 		private _router: Router,
-		private _calService: CalendarService
+		private _calService: CalendarService,
 		) { }
 
 	getCalendar(){
+
 		this._calService.getCalendar().then(calendars => this.calendars = calendars);
-		console.log(this.calendars);
+
+	}
+	
+
+
+	getCode(team:string){
+		this._calService.getCode(team).then(calendars => team);
 	}
 
 	ngOnInit() {
 		this.getCalendar();
+
 	}
 }	
